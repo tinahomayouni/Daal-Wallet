@@ -5,6 +5,6 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'integer', default: 0 })
+  @Column({ type: 'decimal', precision: 10, scale: 2, default: 0 })
   balance: number;
 }
