@@ -1,4 +1,3 @@
-// src/entity/transaction.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { User } from './user.entity';
 

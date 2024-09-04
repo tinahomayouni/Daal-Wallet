@@ -1,4 +1,3 @@
-// user.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { Transaction } from './transaction.entity'; // Ensure this import is correct
 
