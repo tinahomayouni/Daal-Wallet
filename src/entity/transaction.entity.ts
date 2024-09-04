@@ -1,20 +1,27 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { User } from './user.entity';
+// transaction.entity.ts
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  ManyToOne,
+} from 'typeorm';
+import { User } from './user.entity'; // Ensure this import is correct
 
 @Entity()
 export class Transaction {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => User, (user) => user.id)
-  user: User;
+  @Column()
+  referenceId: string;
 
-  @Column({ type: 'integer' })
+  @Column('decimal', { precision: 10, scale: 2 })
   amount: number;
 
-  @Column()
-  timestamp: Date;
+  @CreateDateColumn()
+  createdAt: Date;
 
-  @Column({ unique: true })
-  referenceId: string;
+  @ManyToOne(() => User, (user) => user.transactions)
+  user: User;
 }
