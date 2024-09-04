@@ -1,17 +1,17 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { MoneyService } from './money.service';
+import { UpdateBalanceDto } from './dto/update-balance.dto';
 
 @Controller('/money')
 export class MoneyController {
-  constructor(private readonly MoneyService: MoneyService) {}
+  constructor(private readonly moneyService: MoneyService) {}
+
   @Post()
   async handleTransaction(
-    @Body() body: { userId: number; amount: number },
+    @Body() body: UpdateBalanceDto,
   ): Promise<{ referenceId: string }> {
-    const referenceId = await this.MoneyService.updateBalance(
-      body.userId,
-      body.amount,
-    );
+    const { userId, amount } = body;
+    const referenceId = await this.moneyService.updateBalance(userId, amount);
     return { referenceId };
   }
 }
