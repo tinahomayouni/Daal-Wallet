@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class Version1725448267361 implements MigrationInterface {
-    name = 'Version1725448267361'
+export class Version1725452370408 implements MigrationInterface {
+    name = 'Version1725452370408'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`ALTER TABLE "transaction" DROP COLUMN "timestamp"`);
-        await queryRunner.query(`ALTER TABLE "transaction" ADD "createdAt" TIMESTAMP NOT NULL DEFAULT now()`);
+        await queryRunner.query(`ALTER TABLE "transaction" ADD "createdAt" TIMESTAMP NOT NULL`);
         await queryRunner.query(`ALTER TABLE "transaction" DROP CONSTRAINT "UQ_be7167bad72d966eed3d6b6af39"`);
         await queryRunner.query(`ALTER TABLE "transaction" DROP COLUMN "amount"`);
         await queryRunner.query(`ALTER TABLE "transaction" ADD "amount" numeric(10,2) NOT NULL`);
