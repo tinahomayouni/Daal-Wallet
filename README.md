@@ -48,20 +48,20 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 
-## Resources
-#### Here are some helpful resources related to NestJS:
+Resources
+Here are some helpful resources related to NestJS:
 
-#### NestJS Documentation
-#### NestJS Discord Channel
-#### NestJS Official Courses
-#### NestJS Devtools
-#### NestJS Enterprise Support
-#### NestJS on X (Twitter)
-#### NestJS Jobs Board
+NestJS Documentation
+NestJS Discord Channel
+NestJS Official Courses
+NestJS Devtools
+NestJS Enterprise Support
+NestJS on X (Twitter)
+NestJS Jobs Board
 
 
-## Stay in Touch
-#### Author - Kamil Myśliwiec
-#### Website - https://nestjs.com
-#### Twitter - @nestframework
+Stay in Touch
+Author - Kamil Myśliwiec
+Website - https://nestjs.com
+Twitter - @nestframework
 ```
